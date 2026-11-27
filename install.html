@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Installing and using downloads — Raut Studio</title>
+<meta name="description" content="How to install an Android APK or a Windows build from this site, verify a checksum, and fix the usual problems.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M11 24V9h6.5a4.5 4.5 0 0 1 0 9H11m6.5 0L23 24' stroke='%23fff' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="logo" href="index.html" aria-label="Raut Studio home">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 18V6h4.6a3.4 3.4 0 0 1 0 6.8H8m4.6 0L17 18"/></svg></span>
+      <span class="logo-txt">Raut Studio</span>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html">Home</a>
+      <a href="apps.html">Apps</a>
+      <a href="files.html">Files</a>
+      <a href="install.html" aria-current="page">Install</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="head-cta">
+      <a class="head-gh" href="https://github.com/rautshivamxyz-beep" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn btn-primary btn-sm" href="files.html">Downloads</a>
+    </div>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+  <div class="page-head"><div class="shell"><div class="crumbs"><a href="index.html">Home</a><span>/</span>Install</div><h1>Installing and using downloads</h1><p>Almost everything here is either an Android APK or a Windows build, and neither comes from an app store. It takes a few minutes and needs no developer tools.</p></div></div>
+  <section><div class="shell"><div class="steps">
+    <div class="step-card"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>Android apps</h3><div class="os">APK · sideload</div><ol class="steps-list">
+      <li>Download the <code>.apk</code> from the <a href="files.html" style="color:var(--brand);font-weight:600">files page</a>.</li>
+      <li>Open the downloaded file. If Android warns you, allow installs from your browser or file manager.</li>
+      <li>Finish the install and open the app. Anything it needs from you is explained inside the app.</li>
+      <li>To update later, download the newer APK and install it over the old one — your data stays.</li>
+    </ol></div>
+    <div class="step-card"><h3><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>Windows builds</h3><div class="os">ZIP · extract and run</div><ol class="steps-list">
+      <li>Download the <code>.zip</code> and extract it to a normal writable folder, such as <code>Documents</code>. Not <code>Program Files</code>.</li>
+      <li>Open the extracted folder and look for a start file — usually <code>.bat</code> or <code>.exe</code>.</li>
+      <li>Double-click it. Anything the app needs is either bundled or described in its README.</li>
+      <li>To update, extract the newer build over the old folder, or replace it.</li>
+    </ol></div>
+  </div></div></section>
+  <div class="band"><section><div class="shell"><div class="sec-head"><span class="sec-kicker">Other file types</span><h2>Documents, archives and patches</h2></div><div class="feat-grid">
+    <div class="feat"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/></svg></span><h3>Documents</h3><p>PDFs and notes need nothing installed. Open them in any viewer.</p></div>
+    <div class="feat"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></span><h3>Archives</h3><p>Extract the ZIP first, then read the README inside. Running from inside a compressed folder breaks most apps.</p></div>
+    <div class="feat"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 8-8h6M20 12a8 8 0 0 1-8 8H6"/><path d="m15 4 3 4-3 4"/></svg></span><h3>Patches</h3><p>A delta from an older version. Only apply it if you have that exact version; otherwise take the full build.</p></div>
+  </div></div></section></div>
+  <section><div class="shell"><div class="sec-head"><span class="sec-kicker">Before you install</span><h2>Check the download</h2><p class="sec-sub">Where a <code>.sha256</code> is published, compare it with the file you downloaded. Matching strings mean the file arrived complete.</p></div><div class="tbl-wrap"><table><thead><tr><th>System</th><th>Command</th></tr></thead><tbody>
+    <tr><td class="nm" style="font-family:var(--sans);font-size:14px">Windows (PowerShell)</td><td><code>Get-FileHash .\your-file.zip -Algorithm SHA256</code></td></tr>
+    <tr><td class="nm" style="font-family:var(--sans);font-size:14px">Linux / macOS</td><td><code>sha256sum your-file.zip</code></td></tr>
+    <tr><td class="nm" style="font-family:var(--sans);font-size:14px">Android (Termux)</td><td><code>sha256sum your-file.apk</code></td></tr>
+  </tbody></table></div></div></section>
+  <section id="trouble" style="padding-top:0"><div class="shell"><div class="sec-head"><span class="sec-kicker">When something goes wrong</span><h2>Troubleshooting</h2></div><div class="faq">
+    <details open><summary>Android says the APK is unsafe or blocks the install</summary><div class="faq-body">Android blocks files from browsers by default. Open <strong>Settings → Apps → Special access → Install unknown apps</strong>, pick the app you downloaded with (Chrome, Files), and allow it. Then open the APK again. Play Protect may also warn you — choose "install anyway" if you trust the source.</div></details>
+    <details><summary>The APK will not install at all</summary><div class="faq-body">Most builds here target Android arm64. A device on a different architecture, or on an older Android version than the app supports, will refuse it. If you already have an older version installed with a different signature, uninstall it first.</div></details>
+    <details><summary>A Windows build closes immediately</summary><div class="faq-body">Extract the ZIP to a normal writable folder first — running from inside the compressed folder, or from a protected location such as <code>Program Files</code>, stops most apps from starting.</div></details>
+    <details><summary>The download will not finish or is corrupt</summary><div class="faq-body">Check the size against the number in the table. If it is short, download again — and compare the checksum where one is published. A partial download is the usual cause.</div></details>
+    <details><summary>Which file do I actually need?</summary><div class="faq-body">The <a href="files.html" style="color:var(--brand);font-weight:600">files page</a> lists every build with its description. Take the newest version for your platform; ignore patches unless you are updating a specific older version.</div></details>
+    <details><summary>How do I update later?</summary><div class="faq-body">Download the newer build from the files page and install or extract it over the old one. There is no auto-updater, because there is no store in the middle.</div></details>
+  </div></div></section>
+  <section style="padding-top:0"><div class="shell"><div class="cta-band"><div><h2>Still stuck?</h2><p>Open an issue on the project's repository and say what happened — device, version, and what you saw.</p></div><a class="btn btn-primary" href="https://github.com/rautshivamxyz-beep" target="_blank" rel="noopener">Open an issue</a></div></div></section>
+</main>
+<footer><div class="shell"><div class="foot-in"><div class="foot-brand"><a class="logo" href="index.html"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 18V6h4.6a3.4 3.4 0 0 1 0 6.8H8m4.6 0L17 18"/></svg></span><span class="logo-txt">Raut Studio</span></a><p>Apps and files built by Shivam Raut. Everything published here is free to download, and every link goes straight to the file.</p></div><div class="foot-links"><div class="foot-col"><h4>Pages</h4><a href="index.html">Home</a><a href="apps.html">Apps</a><a href="files.html">Files</a><a href="install.html">Install</a><a href="about.html">About</a></div><div class="foot-col"><h4>Apps</h4><a href="https://github.com/rautshivamxyz-beep/NOVA" target="_blank" rel="noopener">NOVA</a><a href="https://github.com/rautshivamxyz-beep/NOVA-desk" target="_blank" rel="noopener">NOVA Desktop</a><a href="https://github.com/rautshivamxyz-beep/KIDVERSE" target="_blank" rel="noopener">KIDVERSE</a><a href="https://github.com/rautshivamxyz-beep/NOVA-Productivity" target="_blank" rel="noopener">NOVA Productivity</a></div><div class="foot-col"><h4>Elsewhere</h4><a href="https://github.com/rautshivamxyz-beep" target="_blank" rel="noopener">GitHub profile</a><a href="https://github.com/rautshivamxyz-beep/NOVA/releases" target="_blank" rel="noopener">NOVA releases</a><a href="install.html#trouble">Troubleshooting</a></div></div></div><div class="foot-bottom"><span>© <span id="yr">2026</span> Raut Studio · apps by Shivam Raut</span><span>Built with plain HTML, CSS and a little JavaScript.</span></div></div></footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
