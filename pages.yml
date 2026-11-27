@@ -1,0 +1,50 @@
+media: assets/uploads
+content:
+  - name: apps
+    label: Apps
+    type: file
+    path: content/apps.json
+    fields:
+      - name: apps
+        label: Apps
+        type: object
+        list: true
+        fields:
+          - { name: id, label: ID, type: string }
+          - { name: name, label: Name, type: string }
+          - { name: category, label: Category, type: string }
+          - { name: icon, label: Icon, type: select, options: { values: [assistant, desktop, layers, chart] } }
+          - { name: accent, label: Accent, type: select, options: { values: [brand, amber] } }
+          - { name: version, label: Version, type: string }
+          - { name: versionStyle, label: "Version style", type: select, options: { values: [ver, wip] } }
+          - { name: desc, label: Description, type: text }
+          - { name: chips, label: Chips, type: string, list: true }
+          - { name: featured, label: "Show on home", type: boolean }
+          - name: primary
+            label: Primary button
+            type: object
+            fields:
+              - { name: label, label: Label, type: string }
+              - { name: url, label: Link, type: string }
+          - name: secondary
+            label: Second button
+            type: object
+            fields:
+              - { name: label, label: Label, type: string }
+              - { name: url, label: Link, type: string }
+  - name: files
+    label: Downloads
+    type: file
+    path: content/files.json
+    fields:
+      - name: files
+        label: Files
+        type: object
+        list: true
+        fields:
+          - { name: name, label: "File name", type: string }
+          - { name: app, label: App, type: string }
+          - { name: desc, label: Description, type: string }
+          - { name: kind, label: Kind, type: select, options: { values: [App, Checksum, Patch, Document, Archive, Other] } }
+          - { name: size, label: Size, type: string }
+          - { name: url, label: "Download link", type: string }
