@@ -1,0 +1,52 @@
+{
+  "files": [
+    {
+      "name": "NOVA-v9.33.168.apk",
+      "app": "NOVA",
+      "desc": "Android build",
+      "kind": "App",
+      "size": "56.9 MB",
+      "url": "https://github.com/rautshivamxyz-beep/NOVA/releases/download/v9.33.168/NOVA-v9.33.168.apk"
+    },
+    {
+      "name": "NOVA-Desktop-3.2.0-Windows.zip",
+      "app": "NOVA Desktop",
+      "desc": "Windows package",
+      "kind": "App",
+      "size": "36.7 MB",
+      "url": "https://github.com/rautshivamxyz-beep/NOVA-desk/releases/download/v3.2.0/NOVA-Desktop-3.2.0-Windows.zip"
+    },
+    {
+      "name": "NOVA-Desktop-3.2.0-Windows.zip.sha256",
+      "app": "NOVA Desktop",
+      "desc": "Checksum for the ZIP",
+      "kind": "Checksum",
+      "size": "98 B",
+      "url": "https://github.com/rautshivamxyz-beep/NOVA-desk/releases/download/v3.2.0/NOVA-Desktop-3.2.0-Windows.zip.sha256"
+    },
+    {
+      "name": "NOVA-delta-v9.33.166-to-v9.33.168.patch",
+      "app": "NOVA",
+      "desc": "Update from 9.33.166",
+      "kind": "Patch",
+      "size": "734 KB",
+      "url": "https://github.com/rautshivamxyz-beep/NOVA/releases/download/v9.33.168/NOVA-delta-v9.33.166-to-v9.33.168.patch"
+    },
+    {
+      "name": "NOVA-delta-v9.33.165-to-v9.33.168.patch",
+      "app": "NOVA",
+      "desc": "Update from 9.33.168",
+      "kind": "Patch",
+      "size": "900 KB",
+      "url": "https://github.com/rautshivamxyz-beep/NOVA/releases/download/v9.33.168/NOVA-delta-v9.33.165-to-v9.33.168.patch"
+    },
+    {
+      "name": "NOVA-delta-v9.33.164-to-v9.33.168.patch",
+      "app": "NOVA",
+      "desc": "Update from 9.33.168",
+      "kind": "Patch",
+      "size": "1.0 MB",
+      "url": "https://github.com/rautshivamxyz-beep/NOVA/releases/download/v9.33.168/NOVA-delta-v9.33.164-to-v9.33.168.patch"
+    }
+  ]
+}
