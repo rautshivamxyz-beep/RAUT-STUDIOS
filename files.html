@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All files — Raut Studio</title>
+<meta name="description" content="Every file published by Raut Studio in one table: Android APKs, Windows builds, archives, checksums and delta patches.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f766e'/%3E%3Cpath d='M11 24V9h6.5a4.5 4.5 0 0 1 0 9H11m6.5 0L23 24' stroke='%23fff' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="shell head-in">
+    <a class="logo" href="index.html" aria-label="Raut Studio home"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 18V6h4.6a3.4 3.4 0 0 1 0 6.8H8m4.6 0L17 18"/></svg></span><span class="logo-txt">Raut Studio</span></a>
+    <nav class="nav" id="nav"><a href="index.html">Home</a><a href="apps.html">Apps</a><a href="files.html" aria-current="page">Files</a><a href="install.html">Install</a><a href="about.html">About</a></nav>
+    <div class="head-cta"><a class="head-gh" href="https://github.com/rautshivamxyz-beep" target="_blank" rel="noopener">GitHub</a><a class="btn btn-primary btn-sm" href="#all">Downloads</a></div>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+<main id="main">
+  <div class="page-head"><div class="shell"><div class="crumbs"><a href="index.html">Home</a><span>/</span>Files</div><h1>All files</h1><p>Everything I publish, in one table — app builds, archives, checksums and patches. Every link goes straight to the file on GitHub Releases, so nothing is behind a sign-up or a timer.</p></div></div>
+  <section id="all"><div class="shell"><div class="sec-head"><span class="sec-kicker">Downloads</span><h2>Download files</h2><p class="sec-sub">Newest first. If you already have an older version of an app, a patch updates it without re-downloading the whole build.</p></div><div class="tbl-wrap"><table><thead><tr><th>File</th><th>Description</th><th style="text-align:right">Size</th><th style="text-align:right">Download</th></tr></thead><tbody data-files><tr><td colspan="4" class="loading">Loading files…</td></tr></tbody></table></div><p class="tbl-note">Older builds stay on the project's releases page — <a href="https://github.com/rautshivamxyz-beep/NOVA/releases" target="_blank" rel="noopener" style="color:var(--brand);font-weight:600">NOVA releases</a>, <a href="https://github.com/rautshivamxyz-beep/NOVA-desk/releases" target="_blank" rel="noopener" style="color:var(--brand);font-weight:600">desktop releases</a>.</p></div></section>
+  <div class="band"><section><div class="shell"><div class="sec-head"><span class="sec-kicker">Reading the tags</span><h2>What each label means</h2><p class="sec-sub">Not every row is an app. The tag tells you what kind of file it is before you download it.</p></div><div class="feat-grid">
+    <div class="feat"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 20h16"/></svg></span><h3>App</h3><p>An installable build: an Android APK, or a Windows ZIP you extract and run.</p></div>
+    <div class="feat"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8.2 8 9 4.6-.8 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span><h3>Checksum</h3><p>A <code>.sha256</code> file. Compare it with your download to prove nothing was corrupted or altered.</p></div>
+    <div class="feat"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 8-8h6M20 12a8 8 0 0 1-8 8H6"/><path d="m15 4 3 4-3 4"/></svg></span><h3>Patch</h3><p>A delta from one version to another. Small, but only useful if you already have that exact older version.</p></div>
+    <div class="feat"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/></svg></span><h3>Document</h3><p>Readable material — a PDF, notes or a guide. Nothing to install.</p></div>
+    <div class="feat"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg></span><h3>Archive</h3><p>A ZIP or similar bundle — assets, models or a whole project folder. Extract it, then read the included README.</p></div>
+    <div class="feat"><span class="feat-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M11 12h1v4h1"/></svg></span><h3>Other</h3><p>Anything that does not fit the labels above. The description says what it is.</p></div>
+  </div></div></section></div>
+  <section><div class="shell"><div class="cta-band"><div><h2>Downloaded something, now what?</h2><p>The install page covers sideloading an APK, extracting a Windows build, and verifying a checksum.</p></div><a class="btn btn-primary" href="install.html">Open install guide</a></div></div></section>
+</main>
+<footer><div class="shell"><div class="foot-in"><div class="foot-brand"><a class="logo" href="index.html"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 18V6h4.6a3.4 3.4 0 0 1 0 6.8H8m4.6 0L17 18"/></svg></span><span class="logo-txt">Raut Studio</span></a><p>Apps and files built by Shivam Raut. Everything published here is free to download, and every link goes straight to the file.</p></div><div class="foot-links"><div class="foot-col"><h4>Pages</h4><a href="index.html">Home</a><a href="apps.html">Apps</a><a href="files.html">Files</a><a href="install.html">Install</a><a href="about.html">About</a></div><div class="foot-col"><h4>Apps</h4><a href="https://github.com/rautshivamxyz-beep/NOVA" target="_blank" rel="noopener">NOVA</a><a href="https://github.com/rautshivamxyz-beep/NOVA-desk" target="_blank" rel="noopener">NOVA Desktop</a><a href="https://github.com/rautshivamxyz-beep/KIDVERSE" target="_blank" rel="noopener">KIDVERSE</a><a href="https://github.com/rautshivamxyz-beep/NOVA-Productivity" target="_blank" rel="noopener">NOVA Productivity</a></div><div class="foot-col"><h4>Elsewhere</h4><a href="https://github.com/rautshivamxyz-beep" target="_blank" rel="noopener">GitHub profile</a><a href="https://github.com/rautshivamxyz-beep/NOVA/releases" target="_blank" rel="noopener">NOVA releases</a><a href="install.html#trouble">Troubleshooting</a></div></div></div><div class="foot-bottom"><span>© <span id="yr">2026</span> Raut Studio · apps by Shivam Raut</span><span>Built with plain HTML, CSS and a little JavaScript.</span></div></div></footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>
