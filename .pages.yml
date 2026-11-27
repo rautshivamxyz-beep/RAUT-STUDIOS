@@ -1,0 +1,86 @@
+# ============================================================================
+# Pages CMS — a free admin panel for this site, with no Netlify Identity,
+# no Git Gateway and no paid plan.
+#
+# Setup (2 minutes, no card):
+#   1. Push this folder to a GitHub repository.
+#   2. Open https://app.pagescms.org and sign in with GitHub.
+#   3. Install the Pages CMS GitHub App on that repository.
+#   4. Open the repository there — this file gives you the two editors.
+#
+# If a field looks wrong the first time you open it, the field "type" is the
+# thing to adjust: string, text, boolean, select, object, list.
+# ============================================================================
+
+media: assets/uploads
+
+content:
+  - name: apps
+    label: Apps
+    type: file
+    path: content/apps.json
+    fields:
+      - name: apps
+        label: Apps
+        type: object
+        list: true
+        fields:
+          - { name: id, label: "ID (lowercase, no spaces)", type: string }
+          - { name: name, label: Name, type: string }
+          - { name: category, label: Category, type: string }
+          - name: icon
+            label: Icon
+            type: select
+            options:
+              values: [assistant, desktop, layers, chart]
+          - name: accent
+            label: Accent colour
+            type: select
+            options:
+              values: [brand, amber]
+          - { name: version, label: "Version label", type: string, required: false }
+          - name: versionStyle
+            label: Version style
+            type: select
+            options:
+              values: [ver, wip]
+          - { name: desc, label: Description, type: text }
+          - name: chips
+            label: Chips (platform, language, size, date)
+            type: string
+            list: true
+          - name: primary
+            label: Primary button
+            type: object
+            fields:
+              - { name: label, label: Label, type: string }
+              - { name: url, label: Link, type: string }
+          - name: secondary
+            label: Secondary button (optional)
+            type: object
+            required: false
+            fields:
+              - { name: label, label: Label, type: string }
+              - { name: url, label: Link, type: string }
+          - { name: featured, label: "Show on the home page", type: boolean }
+
+  - name: files
+    label: Downloads
+    type: file
+    path: content/files.json
+    fields:
+      - name: files
+        label: Files
+        type: object
+        list: true
+        fields:
+          - { name: name, label: "File name", type: string }
+          - { name: app, label: "Belongs to (app or project)", type: string, required: false }
+          - { name: desc, label: Description, type: string }
+          - name: kind
+            label: Kind
+            type: select
+            options:
+              values: [App, Checksum, Patch, Document, Archive, Other]
+          - { name: size, label: Size (for example 56.9 MB), type: string }
+          - { name: url, label: "Download link", type: string }
