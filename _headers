@@ -1,0 +1,9 @@
+# Cloudflare Pages headers (the equivalent of netlify.toml, for Cloudflare).
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+
+# Content is edited by the admin panel, so never cache it.
+/content/*
+  Cache-Control: public, max-age=0, must-revalidate
