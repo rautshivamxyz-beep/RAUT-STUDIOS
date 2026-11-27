@@ -1,0 +1,20 @@
+# Netlify build settings for a plain static site.
+# There is nothing to compile: the repository root IS the published site.
+
+[build]
+  publish = "."
+  command = ""
+
+# Sensible defaults. Delete any line you do not want.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+# JSON content is edited by the admin panel, so never let a browser cache it.
+[[headers]]
+  for = "/content/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
