@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Content editor — Raut Studio</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="assets/icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f8f7; --surface:#fff; --line:#e3e7e5; --line-2:#eef1ef;
+    --ink:#0e1613; --ink-2:#3f4d47; --ink-3:#6b7a73; --ink-4:#93a09a;
+    --brand:#0f766e; --brand-dark:#0b5d56; --brand-soft:#e8f4f2;
+    --amber:#a15c00; --amber-soft:#fdf3e4;
+    --shadow:0 1px 2px rgba(14,22,19,.05),0 8px 24px -14px rgba(14,22,19,.2);
+    --sans:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;font-size:15px;-webkit-font-smoothing:antialiased}
+  header{background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+  .head{max-width:1080px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+  .mark{width:30px;height:30px;border-radius:8px;background:var(--brand);display:grid;place-items:center;flex:0 0 30px}
+  .mark svg{width:17px;height:17px}
+  .title{font-weight:800;letter-spacing:-.02em;font-size:15.5px}
+  .sub{font-family:var(--mono);font-size:10.5px;color:var(--ink-4);letter-spacing:.06em;text-transform:uppercase}
+  .spacer{margin-left:auto}
+  .wrap{max-width:1080px;margin:0 auto;padding:22px}
+  .note{background:var(--brand-soft);border:1px solid #cfe6e2;border-radius:12px;padding:14px 16px;font-size:13.5px;color:#0b4f49;margin-bottom:20px;line-height:1.6}
+  .note b{font-weight:700}
+  .tabs{display:flex;gap:6px;margin-bottom:18px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:5px;width:max-content}
+  .tab{border:0;background:transparent;font-family:var(--sans);font-size:13.5px;font-weight:600;color:var(--ink-3);padding:8px 16px;border-radius:7px;cursor:pointer}
+  .tab[aria-selected="true"]{background:var(--brand);color:#fff}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:14px;box-shadow:var(--shadow)}
+  .card-top{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .card-top h3{font-size:15px;font-weight:700;letter-spacing:-.01em}
+  .badge{font-family:var(--mono);font-size:9.5px;padding:2px 7px;border-radius:5px;background:var(--brand-soft);color:var(--brand);font-weight:500}
+  .badge--amber{background:var(--amber-soft);color:var(--amber)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .grid .full{grid-column:1/-1}
+  label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-4);margin-bottom:5px;font-weight:500}
+  input[type=text],textarea,select{width:100%;font-family:var(--sans);font-size:13.5px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+  textarea{resize:vertical;min-height:62px;line-height:1.5}
+  input:focus,textarea:focus,select:focus{outline:2px solid var(--brand);outline-offset:0;border-color:var(--brand)}
+  .check{display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--ink-2);margin-top:6px}
+  .check input{width:15px;height:15px;accent-color:var(--brand)}
+  .btn{display:inline-flex;align-items:center;gap:7px;font-family:var(--sans);font-size:13.5px;font-weight:600;padding:9px 15px;border-radius:9px;border:1px solid transparent;cursor:pointer;transition:.15s}
+  .btn svg{width:15px;height:15px;flex:0 0 15px}
+  .btn-primary{background:var(--brand);color:#fff}
+  .btn-primary:hover{background:var(--brand-dark)}
+  .btn-ghost{background:transparent;border-color:var(--line);color:var(--ink)}
+  .btn-ghost:hover{background:var(--bg)}
+  .btn-danger{background:transparent;border-color:transparent;color:#b42318;font-size:12.5px;padding:6px 10px}
+  .btn-danger:hover{background:#fef3f2}
+  .row-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px;align-items:center}
+  .foot{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-top:8px;padding:18px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+  .foot .spacer{margin-left:auto}
+  .status{font-family:var(--mono);font-size:11.5px;color:var(--brand);min-height:18px}
+  .hidden{display:none}
+  @media (max-width:720px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="head">
+  <span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 18V6h4.6a3.4 3.4 0 0 1 0 6.8H8m4.6 0L17 18"/></svg></span>
+  <div><div class="title">Content editor</div><div class="sub">Raut Studio · runs offline</div></div>
+  <span class="spacer"></span><span class="sub" id="count"></span>
+</div></header>
+<div class="wrap">
+  <div class="note"><b>This page runs on your own computer.</b> Nothing is uploaded and there is no login, because there is nothing to log in to — it edits the files locally and hands them back to you as downloads. Replace the two files in the <code>content</code> folder with the ones you download here, then upload the site again.</div>
+  <div class="tabs" role="tablist"><button class="tab" role="tab" id="tab-apps" aria-selected="true" aria-controls="panel-apps">Apps</button><button class="tab" role="tab" id="tab-files" aria-selected="false" aria-controls="panel-files">Downloads</button></div>
+  <div id="panel-apps"></div><div id="panel-files" class="hidden"></div>
+  <div class="row-actions" id="add-row"></div>
+  <div class="foot">
+    <button class="btn btn-primary" id="dl-apps"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 20h16"/></svg>Download apps.json</button>
+    <button class="btn btn-primary" id="dl-files"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0 4.5-4.5M12 15l-4.5-4.5M4 20h16"/></svg>Download files.json</button>
+    <button class="btn btn-ghost" id="copy">Copy to clipboard</button><span class="spacer"></span><span class="status" id="status"></span>
+  </div>
+</div>
+<script>
+var STATE = {
+  apps: [
+    { id:"nova", name:"NOVA", category:"Offline AI assistant", icon:"assistant", accent:"brand", version:"v9.33.168", versionStyle:"ver", desc:"A language model running directly on your phone. Download a model once, then chat offline — no account, no cloud provider, no API key. Supports PDF reading, chat history and model switching.", chips:["Android · arm64","Kotlin","56.9 MB","19 Nov 2026"], primary:{label:"Get APK",url:"https://github.com/rautshivamxyz-beep/NOVA/releases/download/v9.33.168/NOVA-v9.33.168.apk"}, secondary:{label:"Source",url:"https://github.com/rautshivamxyz-beep/NOVA"}, featured:true },
+    { id:"nova-desktop", name:"NOVA Desktop", category:"Same engine, on Windows", icon:"desktop", accent:"brand", version:"v3.2.0", versionStyle:"ver", desc:"A self-contained Windows package with a bundled Python runtime, PDF support and llama.cpp. Bring your own .gguf model — no pip install, no setup wizard.", chips:["Windows","Python","36.7 MB ZIP","20 Nov 2026"], primary:{label:"Get ZIP",url:"https://github.com/rautshivamxyz-beep/NOVA-desk/releases/download/v3.2.0/NOVA-Desktop-3.2.0-Windows.zip"}, secondary:{label:"Source",url:"https://github.com/rautshivamxyz-beep/NOVA-desk"}, featured:true },
+    { id:"kidverse", name:"KIDVERSE", category:"Learning playground for kids", icon:"layers", accent:"amber", version:"Early MVP", versionStyle:"wip", desc:"An offline-first learning app for children around ages 6–10: math challenges with worked hints, science lessons with quizzes, and a bilingual knowledge library.", chips:["Android","Java","No release yet"], primary:{label:"View repository",url:"https://github.com/rautshivamxyz-beep/KIDVERSE"}, secondary:null, featured:false },
+    { id:"nova-productivity", name:"NOVA Productivity", category:"Local-first control centre", icon:"chart", accent:"amber", version:"v0.5.0", versionStyle:"wip", desc:"Tasks, goals and a Study Hub in one dashboard. The Study Hub searches open education sources in English and Hindi and remembers recent searches on the device.", chips:["Android","Kotlin","No release yet"], primary:{label:"View repository",url:"https://github.com/rautshivamxyz-beep/NOVA-Productivity"}, secondary:null, featured:false }
+  ],
+  files: [
+    { name:"NOVA-v9.33.168.apk", app:"NOVA", desc:"Android build", kind:"App", size:"56.9 MB", url:"https://github.com/rautshivamxyz-beep/NOVA/releases/download/v9.33.168/NOVA-v9.33.168.apk" },
+    { name:"NOVA-Desktop-3.2.0-Windows.zip", app:"NOVA Desktop", desc:"Windows package", kind:"App", size:"36.7 MB", url:"https://github.com/rautshivamxyz-beep/NOVA-desk/releases/download/v3.2.0/NOVA-Desktop-3.2.0-Windows.zip" },
+    { name:"NOVA-Desktop-3.2.0-Windows.zip.sha256", app:"NOVA Desktop", desc:"Checksum for the ZIP", kind:"Checksum", size:"98 B", url:"https://github.com/rautshivamxyz-beep/NOVA-desk/releases/download/v3.2.0/NOVA-Desktop-3.2.0-Windows.zip.sha256" },
+    { name:"NOVA-delta-v9.33.166-to-v9.33.168.patch", app:"NOVA", desc:"Update from 9.33.166", kind:"Patch", size:"734 KB", url:"https://github.com/rautshivamxyz-beep/NOVA/releases/download/v9.33.168/NOVA-delta-v9.33.166-to-v9.33.168.patch" },
+    { name:"NOVA-delta-v9.33.165-to-v9.33.168.patch", app:"NOVA", desc:"Update from 9.33.165", kind:"Patch", size:"900 KB", url:"https://github.com/rautshivamxyz-beep/NOVA/releases/download/v9.33.168/NOVA-delta-v9.33.165-to-v9.33.168.patch" },
+    { name:"NOVA-delta-v9.33.164-to-v9.33.168.patch", app:"NOVA", desc:"Update from 9.33.164", kind:"Patch", size:"1.0 MB", url:"https://github.com/rautshivamxyz-beep/NOVA/releases/download/v9.33.168/NOVA-delta-v9.33.164-to-v9.33.168.patch" }
+  ]
+};
+var KINDS=["App","Checksum","Patch","Document","Archive","Other"], ICONS=["assistant","desktop","layers","chart"], current="apps";
+function $(s,r){return (r||document).querySelector(s)}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function field(label,idx,key,value,opts){opts=opts||{};var id=current+"-"+idx+"-"+key,common='data-idx="'+idx+'" data-key="'+key+'"';if(opts.select){return '<div class="'+(opts.full?"full":"")+'"><label for="'+id+'">'+label+'</label><select id="'+id+'" '+common+'>'+opts.select.map(function(o){return '<option value="'+esc(o)+'"'+(o===value?" selected":"")+'>'+esc(o)+'</option>'}).join("")+'</select></div>'}if(opts.area){return '<div class="full"><label for="'+id+'">'+label+'</label><textarea id="'+id+'" '+common+'>'+esc(value)+'</textarea></div>'}return '<div class="'+(opts.full?"full":"")+'"><label for="'+id+'">'+label+'</label><input type="text" id="'+id+'" '+common+' value="'+esc(value)+'" placeholder="'+esc(opts.ph||"")+'"></div>'}
+function renderApps(){var out=STATE.apps.map(function(a,i){var chips=(a.chips||[]).join(", ");return '<div class="card"><div class="card-top"><h3>'+(esc(a.name)||"New app")+'</h3><span class="badge'+(a.accent==="amber"?" badge--amber":"")+'">'+esc(a.version||"no version")+'</span><span class="spacer" style="margin-left:auto"></span><button class="btn btn-danger" data-del-app="'+i+'">Remove</button></div><div class="grid">'+field("Name",i,"name",a.name)+field("Category",i,"category",a.category)+field("Version label",i,"version",a.version,{ph:"v1.0.0 or Early MVP"})+field("Version style",i,"versionStyle",a.versionStyle,{select:["ver","wip"]})+field("Icon",i,"icon",a.icon,{select:ICONS})+field("Accent",i,"accent",a.accent,{select:["brand","amber"]})+field("Description",i,"desc",a.desc,{area:true})+field("Chips (comma separated)",i,"chips",chips,{full:true,ph:"Android, Kotlin, 56.9 MB, 19 Nov 2026"})+field("Primary button label",i,"primary.label",a.primary?a.primary.label:"",{ph:"Get APK"})+field("Primary button link",i,"primary.url",a.primary?a.primary.url:"")+field("Second button label",i,"secondary.label",a.secondary?a.secondary.label:"",{ph:"Source"})+field("Second button link",i,"secondary.url",a.secondary?a.secondary.url:"")+'</div><label class="check"><input type="checkbox" data-idx="'+i+'" data-key="featured"'+(a.featured?" checked":"")+'> Show on the home page</label></div>'}).join("");$("#panel-apps").innerHTML=out||'<div class="card">No apps yet. Use the button below to add one.</div>'}
+function renderFiles(){var out=STATE.files.map(function(f,i){return '<div class="card"><div class="card-top"><h3>'+(esc(f.name)||"New file")+'</h3><span class="badge">'+esc(f.kind||"—")+'</span><span class="spacer" style="margin-left:auto"></span><button class="btn btn-danger" data-del-file="'+i+'">Remove</button></div><div class="grid">'+field("File name",i,"name",f.name,{ph:"my-app.apk"})+field("Belongs to",i,"app",f.app,{ph:"NOVA"})+field("Description",i,"desc",f.desc)+field("Kind",i,"kind",f.kind,{select:KINDS})+field("Size",i,"size",f.size,{ph:"56.9 MB"})+field("Download link",i,"url",f.url,{full:true})+'</div></div>'}).join("");$("#panel-files").innerHTML=out||'<div class="card">No files yet. Use the button below to add one.</div>'}
+function render(){if(current==="apps")renderApps();else renderFiles();$("#count").textContent=STATE.apps.length+" apps · "+STATE.files.length+" files";$("#add-row").innerHTML=current==="apps"?'<button class="btn btn-ghost" id="add-app">+ Add app</button>':'<button class="btn btn-ghost" id="add-file">+ Add file</button>';var add=$("#add-app")||$("#add-file");if(add)add.onclick=current==="apps"?addApp:addFile}
+function addApp(){STATE.apps.push({id:"",name:"",category:"",icon:"assistant",accent:"brand",version:"",versionStyle:"ver",desc:"",chips:[],primary:{label:"Download",url:""},secondary:null,featured:false});render();window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"})}
+function addFile(){STATE.files.push({name:"",app:"",desc:"",kind:"App",size:"",url:""});render();window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"})}
+document.addEventListener("input",function(e){var el=e.target;if(!el.dataset||el.dataset.idx===undefined||!el.dataset.key)return;var i=parseInt(el.dataset.idx,10),key=el.dataset.key,list=current==="apps"?STATE.apps:STATE.files,item=list[i];if(!item)return;var val=el.type==="checkbox"?el.checked:el.value;if(key==="chips"){item.chips=val.split(",").map(function(s){return s.trim()}).filter(Boolean)}else if(key.indexOf(".")>-1){var parts=key.split("."),parent=parts[0],child=parts[1];if(!val&&child==="url"){item[parent]=null}else{item[parent]=item[parent]||{};item[parent][child]=val}}else{item[key]=val;if(key==="name"&&current==="apps")item.id=val.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")}});
+document.addEventListener("click",function(e){var t=e.target.closest("[data-del-app],[data-del-file]");if(!t)return;if(t.dataset.delApp!==undefined)STATE.apps.splice(parseInt(t.dataset.delApp,10),1);else STATE.files.splice(parseInt(t.dataset.delFile,10),1);render()});
+$("#tab-apps").onclick=function(){current="apps";this.setAttribute("aria-selected","true");$("#tab-files").setAttribute("aria-selected","false");$("#panel-apps").classList.remove("hidden");$("#panel-files").classList.add("hidden");render()};
+$("#tab-files").onclick=function(){current="files";this.setAttribute("aria-selected","true");$("#tab-apps").setAttribute("aria-selected","false");$("#panel-files").classList.remove("hidden");$("#panel-apps").classList.add("hidden");render()};
+function download(name,text){var blob=new Blob([text],{type:"application/json"}),a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();document.body.removeChild(a);setTimeout(function(){URL.revokeObjectURL(a.href)},1000);$("#status").textContent=name+" downloaded"}
+function appsJSON(){return JSON.stringify({apps:STATE.apps.map(function(a){return {id:a.id||"",name:a.name,category:a.category,icon:a.icon,accent:a.accent,version:a.version,versionStyle:a.versionStyle,desc:a.desc,chips:a.chips||[],primary:a.primary||null,secondary:a.secondary||null,featured:!!a.featured}})},null,2)}
+function filesJSON(){return JSON.stringify({files:STATE.files},null,2)}
+$("#dl-apps").onclick=function(){download("apps.json",appsJSON())};$("#dl-files").onclick=function(){download("files.json",filesJSON())};
+$("#copy").onclick=function(){var text=current==="apps"?appsJSON():filesJSON(),name=current==="apps"?"apps.json":"files.json";if(navigator.clipboard){navigator.clipboard.writeText(text).then(function(){$("#status").textContent=name+" copied"},function(){$("#status").textContent="Copy blocked — use the download button"})}else{$("#status").textContent="Use the download button"}};
+render();
+</script>
+</body>
+</html>
