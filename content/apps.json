@@ -1,0 +1,96 @@
+{
+  "apps": [
+    {
+      "id": "nova",
+      "name": "NOVA",
+      "category": "Offline AI assistant",
+      "icon": "assistant",
+      "accent": "brand",
+      "version": "v9.33.168",
+      "versionStyle": "ver",
+      "desc": "A language model running directly on your phone. Download a model once, then chat offline — no account, no cloud provider, no API key. Supports PDF reading, chat history and model switching.",
+      "chips": [
+        "Android · arm64",
+        "Kotlin",
+        "56.9 MB",
+        "19 Nov 2026"
+      ],
+      "primary": {
+        "label": "Get APK",
+        "url": "https://github.com/rautshivamxyz-beep/NOVA/releases/download/v9.33.168/NOVA-v9.33.168.apk"
+      },
+      "secondary": {
+        "label": "Source",
+        "url": "https://github.com/rautshivamxyz-beep/NOVA"
+      },
+      "featured": true
+    },
+    {
+      "id": "nova-desktop",
+      "name": "NOVA Desktop",
+      "category": "Same engine, on Windows",
+      "icon": "desktop",
+      "accent": "brand",
+      "version": "v3.2.0",
+      "versionStyle": "ver",
+      "desc": "A self-contained Windows package with a bundled Python runtime, PDF support and llama.cpp. Bring your own .gguf model — no pip install, no setup wizard.",
+      "chips": [
+        "Windows",
+        "Python",
+        "36.7 MB ZIP",
+        "20 Nov 2026"
+      ],
+      "primary": {
+        "label": "Get ZIP",
+        "url": "https://github.com/rautshivamxyz-beep/NOVA-desk/releases/download/v3.2.0/NOVA-Desktop-3.2.0-Windows.zip"
+      },
+      "secondary": {
+        "label": "Source",
+        "url": "https://github.com/rautshivamxyz-beep/NOVA-desk"
+      },
+      "featured": true
+    },
+    {
+      "id": "kidverse",
+      "name": "KIDVERSE",
+      "category": "Learning playground for kids",
+      "icon": "layers",
+      "accent": "amber",
+      "version": "Early MVP",
+      "versionStyle": "wip",
+      "desc": "An offline-first learning app for children around ages 6–10: math challenges with worked hints, science lessons with quizzes, and a bilingual knowledge library.",
+      "chips": [
+        "Android",
+        "Java",
+        "No release yet"
+      ],
+      "primary": {
+        "label": "View repository",
+        "url": "https://github.com/rautshivamxyz-beep/KIDVERSE"
+      },
+      "secondary": null,
+      "featured": false
+    },
+    {
+      "id": "nova-productivity",
+      "name": "NOVA Productivity",
+      "category": "Local-first control centre",
+      "icon": "chart",
+      "accent": "amber",
+      "version": "v0.5.0",
+      "versionStyle": "wip",
+      "desc": "Tasks, goals and a Study Hub in one dashboard. The Study Hub searches open education sources in English and Hindi and remembers recent searches on the device.",
+      "chips": [
+        "Android",
+        "Kotlin",
+        "No release yet"
+      ],
+      "primary": {
+        "label": "View repository",
+        "url": "https://github.com/rautshivamxyz-beep/NOVA-Productivity"
+      },
+      "secondary": null,
+      "featured": false
+    }
+  ]
+}
