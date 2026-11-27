@@ -35,7 +35,7 @@
     {
       "name": "NOVA-delta-v9.33.165-to-v9.33.168.patch",
       "app": "NOVA",
-      "desc": "Update from 9.33.168",
+      "desc": "Update from 9.33.165",
       "kind": "Patch",
       "size": "900 KB",
       "url": "https://github.com/rautshivamxyz-beep/NOVA/releases/download/v9.33.168/NOVA-delta-v9.33.165-to-v9.33.168.patch"
@@ -43,7 +43,7 @@
     {
       "name": "NOVA-delta-v9.33.164-to-v9.33.168.patch",
       "app": "NOVA",
-      "desc": "Update from 9.33.168",
+      "desc": "Update from 9.33.164",
       "kind": "Patch",
       "size": "1.0 MB",
       "url": "https://github.com/rautshivamxyz-beep/NOVA/releases/download/v9.33.168/NOVA-delta-v9.33.164-to-v9.33.168.patch"
